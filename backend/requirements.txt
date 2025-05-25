@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+
+# Optional if implementing real data fetching
+httpx
+python-dotenv
+
+# To run the API:
+# uvicorn main:app --reload --port 8000 --host 0.0.0.0

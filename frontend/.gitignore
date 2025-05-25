@@ -1,0 +1,42 @@
+# Node modules (React frontend)
+node_modules/
+dist/
+.build/
+.env.local
+.env.development
+.env.production
+
+# Build artifacts (optional)
+*.log
+*.cache
+*.lock
+
+# Python virtual environment
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Python environment/IDE
+.Python
+.ipynb_checkpoints/
+.env
+*.sqlite3
+
+# VS Code or other IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Reports and temporary outputs
+*.pdf
+*.csv
+*.zip
+
+# Environment config
+.env
+.env.*

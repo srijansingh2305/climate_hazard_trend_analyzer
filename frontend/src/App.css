@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 500;
+  color: #cccccc;
+}
+
+input, select {
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  color: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #8888ff;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+a {
+  color: #66b3ff;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.chart-container {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin: 16px auto;
+}
+
+.controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #111;
+  border-radius: 12px;
+}
+
+.controls-panel > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-container {
+  height: 500px;
+  border: 2px dashed #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.download-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.map-container {
+  height: 500px;
+  width: 100%;
+  border: 2px dashed #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.clear-button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.clear-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chart-wrapper {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
