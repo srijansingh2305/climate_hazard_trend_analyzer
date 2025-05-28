@@ -26,18 +26,27 @@ async def fetch_weather(lat, lon, start_date, end_date):
         "daily": ["temperature_2m_max", "precipitation_sum"],
         "timezone": "auto",
     }
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        response = await client.get(url, params=params)
-        response.raise_for_status()
-        data = response.json()
 
-    df = pd.DataFrame({
-        "date": data["daily"]["time"],
-        "temp_max": data["daily"]["temperature_2m_max"],
-        "precipitation": data["daily"]["precipitation_sum"]
-    })
-    df["date"] = pd.to_datetime(df["date"])
-    return df
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.get(url, params=params)
+            response.raise_for_status()
+            data = response.json()
+
+            df = pd.DataFrame({
+                "date": data["daily"]["time"],
+                "temp_max": data["daily"]["temperature_2m_max"],
+                "precipitation": data["daily"]["precipitation_sum"]
+            })
+            df["date"] = pd.to_datetime(df["date"])
+            return df
+    except httpx.HTTPStatusError as e:
+        logger.error(f"HTTP error from Open-Meteo: {e}")
+        raise HTTPException(status_code=502, detail=f"Weather data fetch failed for {start_date}–{end_date}")
+    except Exception as e:
+        logger.error(f"Unexpected error: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch weather data.")
+
 
 
 def analyze_trend_summary(trends, hazard_name, threshold, year_range):
